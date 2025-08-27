@@ -1,8 +1,8 @@
+# 🏛️ Mini Legal Portal (Frontend Only)
+
 <img width="2880" height="1542" alt="Screenshot (214)" src="https://github.com/user-attachments/assets/7bfd4a54-319e-40f9-89d7-80bd9cd142a9" />
 
 https://mini-legal-portal.vercel.app/
-
-🏛️ Mini Legal Portal (Frontend Only)
 
 A responsive mini legal portal built with React + Tailwind CSS.
 It simulates login/signup, lets users save legal queries, and stores everything in LocalStorage (no backend).
