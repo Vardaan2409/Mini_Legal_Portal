@@ -57,8 +57,6 @@ Works on mobile, tablet, and desktop
 
 Gradient backgrounds & clean cards
 
-Hero page has a subtle legal pattern overlay
-
 📸 Screenshots
 
 Home Page
