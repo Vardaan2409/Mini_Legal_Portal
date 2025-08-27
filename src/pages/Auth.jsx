@@ -33,15 +33,32 @@ export default function Auth() {
         formState: { errors },
     } = useForm({ resolver: yupResolver(schema) });
 
+    // const onSubmit = (data) => {
+    //     if (tab === "login") {
+    //         login(data.email, data.password);
+    //     } else {
+    //         signup(data.name, data.email, data.password);
+    //     }
+    //     reset();
+    //     navigate("/dashboard");
+    // };
+
     const onSubmit = (data) => {
+        let result;
         if (tab === "login") {
-            login(data.email, data.password);
+            result = login(data.email, data.password);
         } else {
-            signup(data.name, data.email, data.password);
+            result = signup(data.name, data.email, data.password);
         }
-        reset();
-        navigate("/dashboard");
+
+        if (result.success) {
+            reset();
+            navigate("/dashboard");
+        } else {
+            alert(result.message); // or show a styled error message
+        }
     };
+
 
     return (
         <section className="mx-auto max-w-md px-4 py-12">
@@ -50,8 +67,8 @@ export default function Auth() {
                     <button
                         onClick={() => setTab("login")}
                         className={`pb-1 text-lg font-medium ${tab === "login"
-                                ? "border-b-2 border-indigo-600 text-indigo-600"
-                                : "text-slate-600"
+                            ? "border-b-2 border-indigo-600 text-indigo-600"
+                            : "text-slate-600"
                             }`}
                     >
                         Login
@@ -59,8 +76,8 @@ export default function Auth() {
                     <button
                         onClick={() => setTab("signup")}
                         className={`pb-1 text-lg font-medium ${tab === "signup"
-                                ? "border-b-2 border-indigo-600 text-indigo-600"
-                                : "text-slate-600"
+                            ? "border-b-2 border-indigo-600 text-indigo-600"
+                            : "text-slate-600"
                             }`}
                     >
                         Sign Up
